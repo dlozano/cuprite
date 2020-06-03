@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
   s.files         = Dir["{lib}/**/*"] + %w[LICENSE README.md]
 
-  s.required_ruby_version = ">= 2.3.0"
+  #s.required_ruby_version = ">= 2.3.0"
 
   s.add_runtime_dependency "capybara", ">= 2.1", "< 4"
   s.add_runtime_dependency "ferrum",   "~> 0.8.0"
