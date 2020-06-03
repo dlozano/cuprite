@@ -184,7 +184,7 @@ module Capybara::Cuprite
     end
 
     def scroll_by(x, y)
-      driver.execute_script <<~JS, self, x, y
+      driver.execute_script <<-JS, self, x, y
         var el = arguments[0];
         if (el.scrollBy){
           el.scrollBy(arguments[1], arguments[2]);
@@ -256,7 +256,7 @@ module Capybara::Cuprite
       else
         raise ArgumentError, "Invalid scroll_to location: #{location}"
       end
-      driver.execute_script <<~JS, element
+      driver.execute_script <<-JS, element
         arguments[0].scrollIntoView(#{scroll_opts})
       JS
     end
@@ -270,7 +270,7 @@ module Capybara::Cuprite
       when :center
         '(arguments[0].scrollHeight - arguments[0].clientHeight)/2'
       end
-      driver.execute_script <<~JS, self
+      driver.execute_script <<-JS, self
         if (arguments[0].scrollTo){
           arguments[0].scrollTo(0, #{scroll_y});
         } else {
@@ -280,7 +280,7 @@ module Capybara::Cuprite
     end
 
     def scroll_to_coords(x, y)
-      driver.execute_script <<~JS, self, x, y
+      driver.execute_script <<-JS, self, x, y
         if (arguments[0].scrollTo){
           arguments[0].scrollTo(arguments[1], arguments[2]);
         } else {
